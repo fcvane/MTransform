@@ -5,33 +5,36 @@
 # @Param   : 根据源和目标数据库替换Model.py
 # @File    : ModelFile.py
 
-from sqlalchemy.orm import relationship
-from sqlalchemy.ext.declarative import declarative_base
-# MySQL
-from sqlalchemy import CHAR, Column, DECIMAL, Date, ForeignKey, String, TIMESTAMP, Table, Text, text
-from sqlalchemy.dialects.mysql import BIGINT, INTEGER, TINYINT
-# Oracle
-from sqlalchemy import CHAR, Column, DateTime, ForeignKey, Index, Table, Text, VARCHAR, text
-from sqlalchemy.dialects.oracle import NUMBER, RAW
+# from sqlalchemy.orm import relationship
+# from sqlalchemy.ext.declarative import declarative_base
+# # MySQL
+# from sqlalchemy import CHAR, Column, DECIMAL, Date, ForeignKey, String, TIMESTAMP, Table, Text, text
+# from sqlalchemy.dialects.mysql import BIGINT, INTEGER, TINYINT
+# # Oracle
+# from sqlalchemy import CHAR, Column, DateTime, ForeignKey, Index, Table, Text, VARCHAR, text
+# from sqlalchemy.dialects.oracle import NUMBER, RAW
 
 import os
 import re
+import VariableUtil
 
-SFile = 'OraModel.py'
-TFile = 'MySQLModel.py'
+SFile = 'SourceDB_Model.py'
+TFile = 'TargetDB_Model.py'
 
 # Target file is or not exists
 if os.path.exists(TFile):
     os.remove(TFile)
 
-with open(SFile, 'r', encoding='utf-8') as sf, open(TFile, 'a', encoding='utf-8') as tf:
+with open(VariableUtil.TMP_PATH + os.sep + SFile, 'r', encoding='utf-8') as sf, open(
+                        VariableUtil.RLT_PATH + os.sep + TFile, 'a',
+        encoding='utf-8') as tf:
     for line in sf.readlines():
         line = line.replace(' "', '"')
         # 匹配后替换
         # 模块替换
         if re.match('from sqlalchemy import .*', line):
             tf.write(re.sub('from sqlalchemy import .*',
-                            'from sqlalchemy import CHAR, Column, DECIMAL, Date, ForeignKey, Index, String, TIMESTAMP, Table, Text, text',
+                            'from sqlalchemy import CHAR, Column, DECIMAL, Date, ForeignKey, Index, String, TIMESTAMP, Table, Text, text, BLOB',
                             line))
         elif re.match('from sqlalchemy.dialects.oracle import .*', line):
             tf.write(re.sub('from sqlalchemy.dialects.oracle import .*',
@@ -73,11 +76,11 @@ with open(SFile, 'r', encoding='utf-8') as sf, open(TFile, 'a', encoding='utf-8'
             tf.write(re.sub('NUMBER\(asdecimal=False\)', 'INTEGER', line))
         # 二进制类型处理  RAW BLOB -> BLOG
         elif re.match('.*, RAW.*', line):
-            tf.write(re.sub('.*, RAW.*', 'BLOG', line))
-        elif re.match('.*, BLOB.*', line):
-            tf.write(re.sub('.*, BLOB.*', 'BLOG', line))
+            tf.write(re.sub(', RAW', ', BLOB', line))
+        # elif re.match('.*, BLOB.*', line):
+        #     tf.write(re.sub(', BLOB', ', BLOG', line))
         # CLOB -> Text
         elif re.match('.*, CLOB.*', line):
-            tf.write(re.sub('.*, CLOB.*', 'Text', line))
+            tf.write(re.sub(', CLOB', ', Text', line))
         else:
             tf.write(line)

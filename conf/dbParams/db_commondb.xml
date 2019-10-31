@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-->
+type - 数据库类型
+host - 服务器IP
+port - 端口
+sid - oracle实例
+server_name - 服务名称
+username - 用户
+password - 密码
+<-->
+<configuration>
+    <auth id="SOURCEDB">
+        <dbType>ORACLE</dbType>
+        <host>10.45.15.201</host>
+        <port>1521</port>
+        <sid>orcl</sid>
+        <serverName></serverName>
+        <userName>tower_analy</userName>
+        <passWord>2geflYJwrEixn0sP9FxFrU2wJyEJAtQgAu5CgaGnZ0idBgN6Bp0RzUuGduA5S8cihGoAxi7HtSoDIHrxO8J6YA==</passWord>
+        <enable>Ture</enable>
+    </auth>
+
+    <auth id="TARGETDB">
+        <dbType>MYSQL</dbType>
+        <host>10.45.59.163</host>
+        <port>3306</port>
+        <sid></sid>
+        <serverName>mc_test</serverName>
+        <userName>test</userName>
+        <passWord>p4B6zc8+Dwag3yX9GdIOB6O3SUu5oy/0Pvw5aav+/x625wQq1k/80j+yMI6XMu6n8ztchqZZ1IUcvgFcgQQOlQ==</passWord>
+        <enable>Ture</enable>
+    </auth>
+
+    <auth id="SCOTT_10.45.15.205">
+        <dbType>ORACLE</dbType>
+        <host>10.45.15.205</host>
+        <port>1521</port>
+        <sid>orcl</sid>
+        <serverName></serverName>
+        <userName>scott</userName>
+        <passWord>xoiMDvbRNj8hS8f7QkVdwR5VTVnNHiLBXKEPE/pd2DyYxwW0gVL3VYiw6Mr6hv9+hF5TqD5/WGc4wuolwHup9Q==</passWord>
+        <enable>Ture</enable>
+    </auth>
+</configuration>
