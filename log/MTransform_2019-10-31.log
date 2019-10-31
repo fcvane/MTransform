@@ -1,0 +1,19 @@
+[ 2019-10-31 13:42:33,701 ] - [      XmlUtil.py ] - [ line:   43 ] -  INFO : Start to analysis C:\Git\Python\MTransform\conf\dbParams\db_commondb.xml
+[ 2019-10-31 13:42:51,777 ] - [      XmlUtil.py ] - [ line:   43 ] -  INFO : Start to analysis C:\Git\Python\MTransform\conf\dbParams\db_commondb.xml
+[ 2019-10-31 13:42:51,777 ] - [   PasswdUtil.py ] - [ line:   38 ] -  INFO : Password decryption success
+[ 2019-10-31 13:42:51,778 ] - [      XmlUtil.py ] - [ line:   62 ] -  INFO : File C:\Git\Python\MTransform\conf\dbParams\db_commondb.xml analysis sucessful 
+[ 2019-10-31 13:42:51,987 ] - [      XmlUtil.py ] - [ line:   43 ] -  INFO : Start to analysis C:\Git\Python\MTransform\conf\dbParams\db_commondb.xml
+[ 2019-10-31 13:42:51,988 ] - [   PasswdUtil.py ] - [ line:   38 ] -  INFO : Password decryption success
+[ 2019-10-31 13:42:51,989 ] - [      XmlUtil.py ] - [ line:   62 ] -  INFO : File C:\Git\Python\MTransform\conf\dbParams\db_commondb.xml analysis sucessful 
+[ 2019-10-31 13:57:59,796 ] - [         Main.py ] - [ line:   16 ] -  INFO : Start execute sqlacodegen
+[ 2019-10-31 13:58:05,201 ] - [         Main.py ] - [ line:   19 ] -  INFO : Execute sqlacodegen success
+[ 2019-10-31 13:58:05,201 ] - [         Main.py ] - [ line:   21 ] -  INFO : Start replace sourcedb model with targetdb model
+[ 2019-10-31 13:58:05,329 ] - [         Main.py ] - [ line:   23 ] -  INFO : Replace sourcedb model with targetdb model success
+[ 2019-10-31 13:58:05,329 ] - [         Main.py ] - [ line:   25 ] -  INFO : Add sqlalchemy create_engine
+[ 2019-10-31 13:58:05,330 ] - [         Main.py ] - [ line:   33 ] -  INFO : Start execute targetdb model
+[ 2019-10-31 13:58:48,846 ] - [         Main.py ] - [ line:   16 ] -  INFO : Start execute sqlacodegen
+[ 2019-10-31 13:58:51,278 ] - [         Main.py ] - [ line:   19 ] -  INFO : Execute sqlacodegen success
+[ 2019-10-31 13:58:51,278 ] - [         Main.py ] - [ line:   21 ] -  INFO : Start replace sourcedb model with targetdb model
+[ 2019-10-31 13:58:51,403 ] - [         Main.py ] - [ line:   23 ] -  INFO : Replace sourcedb model with targetdb model success
+[ 2019-10-31 13:58:51,403 ] - [         Main.py ] - [ line:   25 ] -  INFO : Add sqlalchemy create_engine
+[ 2019-10-31 13:58:51,404 ] - [         Main.py ] - [ line:   33 ] -  INFO : Start execute targetdb model

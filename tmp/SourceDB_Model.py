@@ -1173,8 +1173,8 @@ t_sys_import_table_01 = Table(
     Column('service_name', VARCHAR(100)),
     Column('object_int_oid', VARCHAR(32)),
     Column('target_xml_clob', Text),
-    Index('sys_mtable_000017b2c_ind_1', 'object_schema', 'object_name', 'object_type'),
-    Index('sys_c0013216', 'process_order', 'duplicate', unique=True)
+    Index('sys_c0013216', 'process_order', 'duplicate', unique=True),
+    Index('sys_mtable_000017b2c_ind_1', 'object_schema', 'object_name', 'object_type')
 )
 
 
