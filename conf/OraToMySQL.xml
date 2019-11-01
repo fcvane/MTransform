@@ -1,0 +1,54 @@
+{
+  "job": {
+    "setting": {
+      "speed": {
+        "channel": 5
+      }
+    },
+    "content": [
+      {
+        "reader": {
+          "name": "oraclereader",
+          "parameter": {
+            "username": "ORAUSERNAME",
+            "password": "ORAPASSWORD",
+            "column": [
+              
+            ],
+            "connection": [
+              {
+                "jdbcUrl": [
+                  "ORAJDBC"
+                ],
+                "querySql": [
+                  "ORASQL"
+                ]
+              }
+            ]
+          }
+        },
+        "writer": {
+          "name": "mysqlwriter",
+          "parameter": {
+            "username": "MySQLUSERNAME",
+            "password": "MySQLPASSWORD",
+            "column": [
+              MySQLCOL
+            ],
+            "preSql": [
+              "PRESQL"
+            ],
+            "connection": [
+              {
+                "jdbcUrl": "MySQLJDBC?useUnicode=true&characterEncoding=gbk",
+                "table": [
+                  "TABLENAME"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}
