@@ -30,5 +30,5 @@ with  open(VariableUtil.RLT_PATH + os.sep + TFile, 'a', encoding='utf-8') as tf:
     tf.write("engine = create_engine('mysql://test:abc123@10.45.59.163:3306/mc_test?charset=utf8')\n")
     tf.write('Base.metadata.create_all(engine)\n')
 
-log.info('Start execute targetdb model')
-os.system("python %s/%s" % (VariableUtil.RLT_PATH, TFile))
+# log.info('Start execute targetdb model')
+# os.system("python %s/%s" % (VariableUtil.RLT_PATH, TFile))

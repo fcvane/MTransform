@@ -34,7 +34,7 @@ with open(VariableUtil.TMP_PATH + os.sep + SFile, 'r', encoding='utf-8') as sf, 
         # 模块替换
         if re.match('from sqlalchemy import .*', line):
             tf.write(re.sub('from sqlalchemy import .*',
-                            'from sqlalchemy import CHAR, Column, DECIMAL, Date, ForeignKey, Index, String, TIMESTAMP, Table, Text, text, BLOB',
+                            'from sqlalchemy import CHAR, Column, DECIMAL, Date, ForeignKey, Index, String, TIMESTAMP, Table, Text, text, BLOB, DateTime',
                             line))
         elif re.match('from sqlalchemy.dialects.oracle import .*', line):
             tf.write(re.sub('from sqlalchemy.dialects.oracle import .*',
@@ -60,17 +60,25 @@ with open(VariableUtil.TMP_PATH + os.sep + SFile, 'r', encoding='utf-8') as sf, 
         elif re.match('.*DateTime.*', line):
             # 时间默认值替换
             if re.match('.*nullable=False, server_default=text\("sysdate"\).*', line):
-                tf.write(re.sub('DateTime', 'TIMESTAMP', line).replace(
+                # tf.write(re.sub('DateTime', 'TIMESTAMP', line).replace(
+                #     'text("sysdate")', 'text("CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")'))
+                tf.write(line.replace(
                     'text("sysdate")', 'text("CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")'))
             elif re.match('.*nullable=False*', line) and re.match('.*server_default.*', line) is None:
-                tf.write(re.sub('DateTime', 'TIMESTAMP', line).replace(
+                # tf.write(re.sub('DateTime', 'TIMESTAMP', line).replace(
+                #     'nullable=False',
+                #     'nullable=False, server_default=text("CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")'))
+                tf.write(line.replace(
                     'nullable=False',
                     'nullable=False, server_default=text("CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")'))
             elif re.match('.*server_default=text\("sysdate"\).*', line):
-                tf.write(re.sub('DateTime', 'TIMESTAMP', line).replace(
+                # tf.write(re.sub('DateTime', 'TIMESTAMP', line).replace(
+                #     'text("sysdate")', 'text("CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")'))
+                tf.write(line.replace(
                     'text("sysdate")', 'text("CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")'))
             else:
-                tf.write(re.sub('DateTime', 'TIMESTAMP', line))
+                #     tf.write(re.sub('DateTime', 'TIMESTAMP', line))
+                tf.write(line)
         # No Length 整形替换 NUMBER(asdecimal=False) -> INTEGER
         elif re.match('.*NUMBER\(asdecimal=False\).*', line):
             tf.write(re.sub('NUMBER\(asdecimal=False\)', 'INTEGER', line))
