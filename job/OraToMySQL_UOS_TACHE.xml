@@ -1,0 +1,54 @@
+{
+  "job": {
+    "setting": {
+      "speed": {
+        "channel": 5
+      }
+    },
+    "content": [
+      {
+        "reader": {
+          "name": "oraclereader",
+          "parameter": {
+            "username": "tower_analy",
+            "password": "tower_analy",
+            "column": [
+              
+            ],
+            "connection": [
+              {
+                "jdbcUrl": [
+                  "jdbc:oracle:thin:@10.45.15.201:1521:orcl"
+                ],
+                "querySql": [
+                  "select ID, TACHE_CATALOG_ID, TACHE_NAME, TACHE_CODE, TACHE_PARAM, TACHE_PARAM2, CURRENT_EDITION, CREATE_DATE, STATE, STATE_DATE from UOS_TACHE"
+                ]
+              }
+            ]
+          }
+        },
+        "writer": {
+          "name": "mysqlwriter",
+          "parameter": {
+            "username": "test",
+            "password": "abc123",
+            "column": [
+              "ID","TACHE_CATALOG_ID","TACHE_NAME","TACHE_CODE","TACHE_PARAM","TACHE_PARAM2","CURRENT_EDITION","CREATE_DATE","STATE","STATE_DATE"
+            ],
+            "preSql": [
+              "truncate table UOS_TACHE"
+            ],
+            "connection": [
+              {
+                "jdbcUrl": "jdbc:mysql://10.45.59.163:3306/mc_test?useUnicode=true&characterEncoding=gbk",
+                "table": [
+                  "UOS_TACHE"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

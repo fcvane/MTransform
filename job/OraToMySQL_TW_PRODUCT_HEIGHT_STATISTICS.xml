@@ -1,0 +1,54 @@
+{
+  "job": {
+    "setting": {
+      "speed": {
+        "channel": 5
+      }
+    },
+    "content": [
+      {
+        "reader": {
+          "name": "oraclereader",
+          "parameter": {
+            "username": "tower_analy",
+            "password": "tower_analy",
+            "column": [
+              
+            ],
+            "connection": [
+              {
+                "jdbcUrl": [
+                  "jdbc:oracle:thin:@10.45.15.201:1521:orcl"
+                ],
+                "querySql": [
+                  "select ID, YEAR_MONTH, PARENT_REGION_ID, REGION_ID, TOWER_TYPE, ANTENNA_HEIGHT_RANGE, TOTAL_RENT_NUM, RENT_FEE, BUILD_FEE, FIELD_FEE, MNT_FEE, ELEC_IN_FEE, OTHER_FEE, CL_RENT_FEE, CL_BUILD_FEE, CL_FIELD_FEE, CL_MNT_FEE, CL_ELEC_IN_FEE, CL_CLOTHER_FEE, XJ_RENT_FEE, XJ_BUILD_FEE, XJ_FIELD_FEE, XJ_MNT_FEE, XJ_ELEC_IN_FEE, XJ_CLOTHER_FEE, BQXJ_RENT_FEE, BQXJ_BUILD_FEE, BQXJ_FIELD_FEE, BQXJ_MNT_FEE, BQXJ_ELEC_IN_FEE, BQXJ_CLOTHER_FEE, CREATE_DATE, STATE from TW_PRODUCT_HEIGHT_STATISTICS"
+                ]
+              }
+            ]
+          }
+        },
+        "writer": {
+          "name": "mysqlwriter",
+          "parameter": {
+            "username": "test",
+            "password": "abc123",
+            "column": [
+              "ID","`YEAR_MONTH`","PARENT_REGION_ID","REGION_ID","TOWER_TYPE","ANTENNA_HEIGHT_RANGE","TOTAL_RENT_NUM","RENT_FEE","BUILD_FEE","FIELD_FEE","MNT_FEE","ELEC_IN_FEE","OTHER_FEE","CL_RENT_FEE","CL_BUILD_FEE","CL_FIELD_FEE","CL_MNT_FEE","CL_ELEC_IN_FEE","CL_CLOTHER_FEE","XJ_RENT_FEE","XJ_BUILD_FEE","XJ_FIELD_FEE","XJ_MNT_FEE","XJ_ELEC_IN_FEE","XJ_CLOTHER_FEE","BQXJ_RENT_FEE","BQXJ_BUILD_FEE","BQXJ_FIELD_FEE","BQXJ_MNT_FEE","BQXJ_ELEC_IN_FEE","BQXJ_CLOTHER_FEE","CREATE_DATE","STATE"
+            ],
+            "preSql": [
+              "truncate table TW_PRODUCT_HEIGHT_STATISTICS"
+            ],
+            "connection": [
+              {
+                "jdbcUrl": "jdbc:mysql://10.45.59.163:3306/mc_test?useUnicode=true&characterEncoding=gbk",
+                "table": [
+                  "TW_PRODUCT_HEIGHT_STATISTICS"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

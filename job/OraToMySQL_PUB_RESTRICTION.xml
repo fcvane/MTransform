@@ -1,0 +1,54 @@
+{
+  "job": {
+    "setting": {
+      "speed": {
+        "channel": 5
+      }
+    },
+    "content": [
+      {
+        "reader": {
+          "name": "oraclereader",
+          "parameter": {
+            "username": "tower_analy",
+            "password": "tower_analy",
+            "column": [
+              
+            ],
+            "connection": [
+              {
+                "jdbcUrl": [
+                  "jdbc:oracle:thin:@10.45.15.201:1521:orcl"
+                ],
+                "querySql": [
+                  "select SERIAL_NO, DESC_ID, DESC_CHINA, CODE, KEYWORD, IS_DISPLAY, KEYWORD_DESC, DELETE_STATE, DELETE_TIME, SEQ_ID, DESCRIBE_FIELD_ID, DESCRIBE_FIELD_NAME, VERSION, ENV_DOMAIN_ID, CREATE_OP, CREATE_DATE, MODIFY_OP, MODIFY_DATE from PUB_RESTRICTION"
+                ]
+              }
+            ]
+          }
+        },
+        "writer": {
+          "name": "mysqlwriter",
+          "parameter": {
+            "username": "test",
+            "password": "abc123",
+            "column": [
+              "SERIAL_NO","DESC_ID","DESC_CHINA","CODE","KEYWORD","IS_DISPLAY","KEYWORD_DESC","DELETE_STATE","DELETE_TIME","SEQ_ID","DESCRIBE_FIELD_ID","DESCRIBE_FIELD_NAME","VERSION","ENV_DOMAIN_ID","CREATE_OP","CREATE_DATE","MODIFY_OP","MODIFY_DATE"
+            ],
+            "preSql": [
+              "truncate table PUB_RESTRICTION"
+            ],
+            "connection": [
+              {
+                "jdbcUrl": "jdbc:mysql://10.45.59.163:3306/mc_test?useUnicode=true&characterEncoding=gbk",
+                "table": [
+                  "PUB_RESTRICTION"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

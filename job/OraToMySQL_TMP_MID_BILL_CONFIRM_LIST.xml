@@ -1,0 +1,54 @@
+{
+  "job": {
+    "setting": {
+      "speed": {
+        "channel": 5
+      }
+    },
+    "content": [
+      {
+        "reader": {
+          "name": "oraclereader",
+          "parameter": {
+            "username": "tower_analy",
+            "password": "tower_analy",
+            "column": [
+              
+            ],
+            "connection": [
+              {
+                "jdbcUrl": [
+                  "jdbc:oracle:thin:@10.45.15.201:1521:orcl"
+                ],
+                "querySql": [
+                  "select YEAR_MONTH, PROVINCE_ID, CITY_ID, REGION_ID, SITE_CODE, ELEC_ENSURE_FEE, ADJUSTED_TW_RENT_FEE, ADJUSTED_TOWER_RENT_CHARGE, ADJUSTED_ROOM_RENT_CHARGE, ADJUSTED_PT_RENT_CHARGE, ADJUSTED_SITE_FEE, ADJUSTED_MAINTAIN_FEE, ADJUSTED_ELECT_INTRO_FEE, ADJUSTED_OIL_PW_FIXED_FEE, ADJUSTED_NON_OIL_PW_FIXED_FEE, ADJUSTED_OTHER_PRICE, ADJUSTED_WAVE_FEE, ADJUSTED_WLAN_FEE, ADJ_BBUTOWER_FEE, OILGENPOWER_CHARGE_LS, ADJUSTED_PRO_PRICE, DATA_SOURCE, ADJUSTED_BATTERY_EXT_FEE, ADJUSTED_HIGH_CLASS_SERV_FEE, ADJUSTED_BBUTOWER_FEE, BILL_TYPE from TMP_MID_BILL_CONFIRM_LIST"
+                ]
+              }
+            ]
+          }
+        },
+        "writer": {
+          "name": "mysqlwriter",
+          "parameter": {
+            "username": "test",
+            "password": "abc123",
+            "column": [
+              "`YEAR_MONTH`","PROVINCE_ID","CITY_ID","REGION_ID","SITE_CODE","ELEC_ENSURE_FEE","ADJUSTED_TW_RENT_FEE","ADJUSTED_TOWER_RENT_CHARGE","ADJUSTED_ROOM_RENT_CHARGE","ADJUSTED_PT_RENT_CHARGE","ADJUSTED_SITE_FEE","ADJUSTED_MAINTAIN_FEE","ADJUSTED_ELECT_INTRO_FEE","ADJUSTED_OIL_PW_FIXED_FEE","ADJUSTED_NON_OIL_PW_FIXED_FEE","ADJUSTED_OTHER_PRICE","ADJUSTED_WAVE_FEE","ADJUSTED_WLAN_FEE","ADJ_BBUTOWER_FEE","OILGENPOWER_CHARGE_LS","ADJUSTED_PRO_PRICE","DATA_SOURCE","ADJUSTED_BATTERY_EXT_FEE","ADJUSTED_HIGH_CLASS_SERV_FEE","ADJUSTED_BBUTOWER_FEE","BILL_TYPE"
+            ],
+            "preSql": [
+              "truncate table TMP_MID_BILL_CONFIRM_LIST"
+            ],
+            "connection": [
+              {
+                "jdbcUrl": "jdbc:mysql://10.45.59.163:3306/mc_test?useUnicode=true&characterEncoding=gbk",
+                "table": [
+                  "TMP_MID_BILL_CONFIRM_LIST"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

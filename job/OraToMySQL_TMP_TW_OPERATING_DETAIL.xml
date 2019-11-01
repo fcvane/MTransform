@@ -1,0 +1,54 @@
+{
+  "job": {
+    "setting": {
+      "speed": {
+        "channel": 5
+      }
+    },
+    "content": [
+      {
+        "reader": {
+          "name": "oraclereader",
+          "parameter": {
+            "username": "tower_analy",
+            "password": "tower_analy",
+            "column": [
+              
+            ],
+            "connection": [
+              {
+                "jdbcUrl": [
+                  "jdbc:oracle:thin:@10.45.15.201:1521:orcl"
+                ],
+                "querySql": [
+                  "select DETAIL_ID, YEAR_MONTH, PROVINCE_NAME, PROVINCE_CODE, LATN_ID, LATN_NAME, REGION_ID, ADDRESS_ID, ADDRESS_NAME, ADDRESS_NO, ADDRESS_LOCATION, TW_TYPE, RANKING, PREV_RANKING, DEPRECIATION_FEE, POWER_FEE, BUILD_FEE, FIELD_FEE, MNT_FEE, ELEC_IN_FEE, OTHER_FEE, TOTAL_COST_FEE, RENT_FEE, CREATE_DATE, STATE, OILGENPOWER_CHARGE, ROOM_CONFIG, TW_CUR_CUST_NUM, SHARE_INFO, DATA_SOURCE, PROVINCE_ID, CITY_ID, ROOM_ID, TOWER_ID, SITE_CUR_CUST_NUM, ELEC_ENSURE_FEE, NON_ELEC_ENSURE_FEE, TOWER_RENT_CHARGE, ROOM_RENT_CHARGE, PT_RENT_CHARGE, OIL_PW_FIXED_FEE, NON_OIL_PW_FIXED_FEE, SITE_OTHER_FEE, WAVE_FEE, WLAN_FEE, BBUTOWER_FEE, SITE_SHARE_INFO, FIELD_SHARE_INFO, ROOM_SHARE_INFO, EARLIEST_SERVICE_BEGIN_DATE, COUNT_REGION_GRADE, ADJUSTED_HIGH_CLASS_SERV_FEE, ADJUSTED_BATTERY_EXT_FEE, NON_ELEC_ENSURE_FEE_HAVE_TAX, BILL_TYPE, CHAMBER_CUR_CUST_NUM, TRANS_CUR_CUST_NUM, CHAMBER_RENT_CHARGE, TRANS_RENT_CHARGE, CHAMBER_PROD from TMP_TW_OPERATING_DETAIL"
+                ]
+              }
+            ]
+          }
+        },
+        "writer": {
+          "name": "mysqlwriter",
+          "parameter": {
+            "username": "test",
+            "password": "abc123",
+            "column": [
+              "DETAIL_ID","`YEAR_MONTH`","PROVINCE_NAME","PROVINCE_CODE","LATN_ID","LATN_NAME","REGION_ID","ADDRESS_ID","ADDRESS_NAME","ADDRESS_NO","ADDRESS_LOCATION","TW_TYPE","RANKING","PREV_RANKING","DEPRECIATION_FEE","POWER_FEE","BUILD_FEE","FIELD_FEE","MNT_FEE","ELEC_IN_FEE","OTHER_FEE","TOTAL_COST_FEE","RENT_FEE","CREATE_DATE","STATE","OILGENPOWER_CHARGE","ROOM_CONFIG","TW_CUR_CUST_NUM","SHARE_INFO","DATA_SOURCE","PROVINCE_ID","CITY_ID","ROOM_ID","TOWER_ID","SITE_CUR_CUST_NUM","ELEC_ENSURE_FEE","NON_ELEC_ENSURE_FEE","TOWER_RENT_CHARGE","ROOM_RENT_CHARGE","PT_RENT_CHARGE","OIL_PW_FIXED_FEE","NON_OIL_PW_FIXED_FEE","SITE_OTHER_FEE","WAVE_FEE","WLAN_FEE","BBUTOWER_FEE","SITE_SHARE_INFO","FIELD_SHARE_INFO","ROOM_SHARE_INFO","EARLIEST_SERVICE_BEGIN_DATE","COUNT_REGION_GRADE","ADJUSTED_HIGH_CLASS_SERV_FEE","ADJUSTED_BATTERY_EXT_FEE","NON_ELEC_ENSURE_FEE_HAVE_TAX","BILL_TYPE","CHAMBER_CUR_CUST_NUM","TRANS_CUR_CUST_NUM","CHAMBER_RENT_CHARGE","TRANS_RENT_CHARGE","CHAMBER_PROD"
+            ],
+            "preSql": [
+              "truncate table TMP_TW_OPERATING_DETAIL"
+            ],
+            "connection": [
+              {
+                "jdbcUrl": "jdbc:mysql://10.45.59.163:3306/mc_test?useUnicode=true&characterEncoding=gbk",
+                "table": [
+                  "TMP_TW_OPERATING_DETAIL"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

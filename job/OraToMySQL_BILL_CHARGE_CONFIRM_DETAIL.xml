@@ -1,0 +1,54 @@
+{
+  "job": {
+    "setting": {
+      "speed": {
+        "channel": 5
+      }
+    },
+    "content": [
+      {
+        "reader": {
+          "name": "oraclereader",
+          "parameter": {
+            "username": "tower_analy",
+            "password": "tower_analy",
+            "column": [
+              
+            ],
+            "connection": [
+              {
+                "jdbcUrl": [
+                  "jdbc:oracle:thin:@10.45.15.201:1521:orcl"
+                ],
+                "querySql": [
+                  "select CONFIRM_DETAIL_ID, CITY_ID, YEAR_MONTH, FEE_TYPE, COUNT_TYPE, FEE, SEND_TIME, TW_SIGN_TIME, TELECOM_SIGN_TIME, CREATE_OP, CREATE_TIME, MODIFY_OP, MODIFY_TIME, DELETE_STATE, DELETE_TIME from BILL_CHARGE_CONFIRM_DETAIL"
+                ]
+              }
+            ]
+          }
+        },
+        "writer": {
+          "name": "mysqlwriter",
+          "parameter": {
+            "username": "test",
+            "password": "abc123",
+            "column": [
+              "CONFIRM_DETAIL_ID","CITY_ID","`YEAR_MONTH`","FEE_TYPE","COUNT_TYPE","FEE","SEND_TIME","TW_SIGN_TIME","TELECOM_SIGN_TIME","CREATE_OP","CREATE_TIME","MODIFY_OP","MODIFY_TIME","DELETE_STATE","DELETE_TIME"
+            ],
+            "preSql": [
+              "truncate table BILL_CHARGE_CONFIRM_DETAIL"
+            ],
+            "connection": [
+              {
+                "jdbcUrl": "jdbc:mysql://10.45.59.163:3306/mc_test?useUnicode=true&characterEncoding=gbk",
+                "table": [
+                  "BILL_CHARGE_CONFIRM_DETAIL"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

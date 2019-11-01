@@ -1,0 +1,54 @@
+{
+  "job": {
+    "setting": {
+      "speed": {
+        "channel": 5
+      }
+    },
+    "content": [
+      {
+        "reader": {
+          "name": "oraclereader",
+          "parameter": {
+            "username": "tower_analy",
+            "password": "tower_analy",
+            "column": [
+              
+            ],
+            "connection": [
+              {
+                "jdbcUrl": [
+                  "jdbc:oracle:thin:@10.45.15.201:1521:orcl"
+                ],
+                "querySql": [
+                  "select CONTRACT_NO, YEAR_MONTH, PROVINCE_ID, CITY_ID, REGION_ID, TW_TYPE, START_HEIGHT, ANTENNA_HEIGHT, ANTENNA_HEIGHT1, ANTENNA_HEIGHT2, ANTENNA_HEIGHT3, ADJUSTED_TW_RENT_FEE, ADJUSTED_SITE_FEE, ADJUSTED_MAINTAIN_FEE, ADJUSTED_ELECT_INTRO_FEE, ADJUSTED_OTHER_PRICE, ADJUSTED_WAVE_FEE, ADJUSTED_WLAN_FEE, SHARE_INFO, SERVICE_BEGIN_DATE, ADJUSTED_HIGH_CLASS_SERV_FEE, ADJUSTED_BATTERY_EXT_FEE, ADJUSTED_BBUTOWER_FEE from TMP_TW_PRO_HEIGHT_STATISTICS"
+                ]
+              }
+            ]
+          }
+        },
+        "writer": {
+          "name": "mysqlwriter",
+          "parameter": {
+            "username": "test",
+            "password": "abc123",
+            "column": [
+              "CONTRACT_NO","`YEAR_MONTH`","PROVINCE_ID","CITY_ID","REGION_ID","TW_TYPE","START_HEIGHT","ANTENNA_HEIGHT","ANTENNA_HEIGHT1","ANTENNA_HEIGHT2","ANTENNA_HEIGHT3","ADJUSTED_TW_RENT_FEE","ADJUSTED_SITE_FEE","ADJUSTED_MAINTAIN_FEE","ADJUSTED_ELECT_INTRO_FEE","ADJUSTED_OTHER_PRICE","ADJUSTED_WAVE_FEE","ADJUSTED_WLAN_FEE","SHARE_INFO","SERVICE_BEGIN_DATE","ADJUSTED_HIGH_CLASS_SERV_FEE","ADJUSTED_BATTERY_EXT_FEE","ADJUSTED_BBUTOWER_FEE"
+            ],
+            "preSql": [
+              "truncate table TMP_TW_PRO_HEIGHT_STATISTICS"
+            ],
+            "connection": [
+              {
+                "jdbcUrl": "jdbc:mysql://10.45.59.163:3306/mc_test?useUnicode=true&characterEncoding=gbk",
+                "table": [
+                  "TMP_TW_PRO_HEIGHT_STATISTICS"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

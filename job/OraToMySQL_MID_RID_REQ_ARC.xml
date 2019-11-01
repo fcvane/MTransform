@@ -1,0 +1,54 @@
+{
+  "job": {
+    "setting": {
+      "speed": {
+        "channel": 5
+      }
+    },
+    "content": [
+      {
+        "reader": {
+          "name": "oraclereader",
+          "parameter": {
+            "username": "tower_analy",
+            "password": "tower_analy",
+            "column": [
+              
+            ],
+            "connection": [
+              {
+                "jdbcUrl": [
+                  "jdbc:oracle:thin:@10.45.15.201:1521:orcl"
+                ],
+                "querySql": [
+                  "select REQ_ID, VERSION, REQ_NO, REQ_NO_TT, REQ_TYPE, REQ_NAME, REQ_DESC, PROVINCE, CITY, REGION, PRO_BATCH, DELIVERY_TIME, COMPANY, SITE_CODE, SITE_NAME, LONGITUDE, LATITUDE, LOCATION, LAUNCH_MAN, LAUNCH_TIME, REL_TEL, PROJECT_SITE, NOTES, CREATE_OP, CREATE_TIME, MODIFY_OP, MODIFY_TIME, MODIFY_DESC, DELETE_REASON, DELETE_OP, DELETE_TIME, DELETE_DESC, FILE_NAME, STATE, BUSINESS_STATE, APPROVAL_OPINION, APPROVAL_OPINION_DESC, APPROVAL_OP, APPROVAL_OP_NAME, APPROVAL_TIME, COMMIT_TT_SUCCESS, COMMIT_TT_FAIL_RESON, RECEIVE_STATE_TT, RETURN_RESON_TT, RECEIVE_MAN, RECEIVE_TIME, FLOW_ORDER_ID, DEAL_OPINION_DESC, ARC_TIME, ARC_OP from MID_RID_REQ_ARC"
+                ]
+              }
+            ]
+          }
+        },
+        "writer": {
+          "name": "mysqlwriter",
+          "parameter": {
+            "username": "test",
+            "password": "abc123",
+            "column": [
+              "REQ_ID","VERSION","REQ_NO","REQ_NO_TT","REQ_TYPE","REQ_NAME","REQ_DESC","PROVINCE","CITY","REGION","PRO_BATCH","DELIVERY_TIME","COMPANY","SITE_CODE","SITE_NAME","LONGITUDE","LATITUDE","LOCATION","LAUNCH_MAN","LAUNCH_TIME","REL_TEL","PROJECT_SITE","NOTES","CREATE_OP","CREATE_TIME","MODIFY_OP","MODIFY_TIME","MODIFY_DESC","DELETE_REASON","DELETE_OP","DELETE_TIME","DELETE_DESC","FILE_NAME","STATE","BUSINESS_STATE","APPROVAL_OPINION","APPROVAL_OPINION_DESC","APPROVAL_OP","APPROVAL_OP_NAME","APPROVAL_TIME","COMMIT_TT_SUCCESS","COMMIT_TT_FAIL_RESON","RECEIVE_STATE_TT","RETURN_RESON_TT","RECEIVE_MAN","RECEIVE_TIME","FLOW_ORDER_ID","DEAL_OPINION_DESC","ARC_TIME","ARC_OP"
+            ],
+            "preSql": [
+              "truncate table MID_RID_REQ_ARC"
+            ],
+            "connection": [
+              {
+                "jdbcUrl": "jdbc:mysql://10.45.59.163:3306/mc_test?useUnicode=true&characterEncoding=gbk",
+                "table": [
+                  "MID_RID_REQ_ARC"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

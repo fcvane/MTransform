@@ -1,0 +1,54 @@
+{
+  "job": {
+    "setting": {
+      "speed": {
+        "channel": 5
+      }
+    },
+    "content": [
+      {
+        "reader": {
+          "name": "oraclereader",
+          "parameter": {
+            "username": "tower_analy",
+            "password": "tower_analy",
+            "column": [
+              
+            ],
+            "connection": [
+              {
+                "jdbcUrl": [
+                  "jdbc:oracle:thin:@10.45.15.201:1521:orcl"
+                ],
+                "querySql": [
+                  "select CONTRACT_ID, CONTRACT_NO, PRODUCT_TYPE, CONTRACT_TYPE, COMPANY, RENT_STATE, REQ_NO, REGION_ID, SERVICE_BEGIN_DATE, SERVICE_END_DATE, STATION_ID, SPARE_BATERRY, ELEC_SERVICE_MODE, ELEC_ENSURE_FEE, OTHER_FEE, OTHER_FEE_NOTES, MNT_DISCOUNT, MNT_FEE, FIELD_FEE, FIELD_DISCOUNT, PRODUCT_SERVICE_FEE_TAX, PRODUCT_SERVICE_FEE, CREATE_TIME, CREATE_OP, MODIFY_TIME, MODIFY_OP, DELETE_TIME, DELETE_STATE, COUNTY_ID, LATITUDE, PROV_ID, CITY_ID, COMPANY_CITY_ID, REQ_CITY_ID, SCENE, SITEADDRESS_CODE, SITEADDRESS_NAME, SITEADDRESS_ADDRESS, LONGITUDE, IS_STAND_BLD_COST, CONTRACT_INITIATOR, CONTRACT_INITIA_DATE, FIELD_FEE_MODE, NOTES1, NOTES2, NOTES3, OFF_HIRE_DATE, DELETE_OP, YEAR_MONTH, BASIS_MODE, OTHER_MAINTENANCE_FEE, SITE_SHARE_INFO, OTHER_SITE_RENT, SITE_RENT_IS_SHARE, FIELD_SHARE_INFO, REQUEST_SOURCE, MAINT_IS_SHARE, IS_EXPIRED from MID_RID_RENT_CONTRACT"
+                ]
+              }
+            ]
+          }
+        },
+        "writer": {
+          "name": "mysqlwriter",
+          "parameter": {
+            "username": "test",
+            "password": "abc123",
+            "column": [
+              "CONTRACT_ID","CONTRACT_NO","PRODUCT_TYPE","CONTRACT_TYPE","COMPANY","RENT_STATE","REQ_NO","REGION_ID","SERVICE_BEGIN_DATE","SERVICE_END_DATE","STATION_ID","SPARE_BATERRY","ELEC_SERVICE_MODE","ELEC_ENSURE_FEE","OTHER_FEE","OTHER_FEE_NOTES","MNT_DISCOUNT","MNT_FEE","FIELD_FEE","FIELD_DISCOUNT","PRODUCT_SERVICE_FEE_TAX","PRODUCT_SERVICE_FEE","CREATE_TIME","CREATE_OP","MODIFY_TIME","MODIFY_OP","DELETE_TIME","DELETE_STATE","COUNTY_ID","LATITUDE","PROV_ID","CITY_ID","COMPANY_CITY_ID","REQ_CITY_ID","SCENE","SITEADDRESS_CODE","SITEADDRESS_NAME","SITEADDRESS_ADDRESS","LONGITUDE","IS_STAND_BLD_COST","CONTRACT_INITIATOR","CONTRACT_INITIA_DATE","FIELD_FEE_MODE","NOTES1","NOTES2","NOTES3","OFF_HIRE_DATE","DELETE_OP","`YEAR_MONTH`","BASIS_MODE","OTHER_MAINTENANCE_FEE","SITE_SHARE_INFO","OTHER_SITE_RENT","SITE_RENT_IS_SHARE","FIELD_SHARE_INFO","REQUEST_SOURCE","MAINT_IS_SHARE","IS_EXPIRED"
+            ],
+            "preSql": [
+              "truncate table MID_RID_RENT_CONTRACT"
+            ],
+            "connection": [
+              {
+                "jdbcUrl": "jdbc:mysql://10.45.59.163:3306/mc_test?useUnicode=true&characterEncoding=gbk",
+                "table": [
+                  "MID_RID_RENT_CONTRACT"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

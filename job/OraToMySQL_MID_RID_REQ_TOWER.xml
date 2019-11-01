@@ -1,0 +1,54 @@
+{
+  "job": {
+    "setting": {
+      "speed": {
+        "channel": 5
+      }
+    },
+    "content": [
+      {
+        "reader": {
+          "name": "oraclereader",
+          "parameter": {
+            "username": "tower_analy",
+            "password": "tower_analy",
+            "column": [
+              
+            ],
+            "connection": [
+              {
+                "jdbcUrl": [
+                  "jdbc:oracle:thin:@10.45.15.201:1521:orcl"
+                ],
+                "querySql": [
+                  "select REQ_ID, VERSION, REQ_NO, REQ_NO_TT, SITE_NAME, SCENE_DIVIDE, LONGITUDE, LATITUDE, COVER_DESC, OFFSET_ALLOW, SLOT_NUM, SYSTEM_COUNT, SYSTEM_BAND, ANTENNA_HIGH_L, ANTENNA_HIGH_H, ANT_NUM, IS_RRUREMOTE, DELIVERY_TIME, STATE, SYSTEM_TYPE from MID_RID_REQ_TOWER"
+                ]
+              }
+            ]
+          }
+        },
+        "writer": {
+          "name": "mysqlwriter",
+          "parameter": {
+            "username": "test",
+            "password": "abc123",
+            "column": [
+              "REQ_ID","VERSION","REQ_NO","REQ_NO_TT","SITE_NAME","SCENE_DIVIDE","LONGITUDE","LATITUDE","COVER_DESC","OFFSET_ALLOW","SLOT_NUM","SYSTEM_COUNT","SYSTEM_BAND","ANTENNA_HIGH_L","ANTENNA_HIGH_H","ANT_NUM","IS_RRUREMOTE","DELIVERY_TIME","STATE","SYSTEM_TYPE"
+            ],
+            "preSql": [
+              "truncate table MID_RID_REQ_TOWER"
+            ],
+            "connection": [
+              {
+                "jdbcUrl": "jdbc:mysql://10.45.59.163:3306/mc_test?useUnicode=true&characterEncoding=gbk",
+                "table": [
+                  "MID_RID_REQ_TOWER"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}
