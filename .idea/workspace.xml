@@ -1,47 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1c3ace3c-43b2-4b39-937c-6e0060659e39" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/bin/OutPutPSQL.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result/TDB.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/MTransform.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MTransform.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ModelFile.py" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ModelFile.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/OraToMySQL.sh" beforeDir="false" afterPath="$PROJECT_DIR$/bin/OraToMySQL.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/OraToMySQL_BILL_CHARGE_CONFIRM_DETAIL.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/OraToMySQL_MID_BILL_CONFIRM_LIST.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/OraToMySQL_MID_GOM_PS_2_WO_S.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/OraToMySQL_MID_GOM_WO.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/OraToMySQL_MID_REQ_DEVELOPMENT.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/OraToMySQL_MID_RID_DELIVERY_TOWER.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/OraToMySQL_MID_RID_DELIVERY_TOWER_ARC.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/OraToMySQL_MID_RID_ORDER_INSTANCE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/OraToMySQL_MID_RID_ORDER_INSTANCE_ARC.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/OraToMySQL_MID_RID_RENT_CONTRACT.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/OraToMySQL_MID_RID_RENT_CONTRACT_TW.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/OraToMySQL_MID_RID_REQ.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/OraToMySQL_MID_RID_REQ_ARC.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/OraToMySQL_MID_RID_REQ_TOWER.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/OraToMySQL_MID_RID_REQ_TOWER_ARC.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/OraToMySQL_PUB_RESTRICTION.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/OraToMySQL_SPC_REGION.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/OraToMySQL_TMP_MID_BILL_CONFIRM_LIST.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/OraToMySQL_TMP_PRODUCT_HEIGHT_STATISTICS.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/OraToMySQL_TMP_TW_OPERATING_DETAIL.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/OraToMySQL_TMP_TW_PRO_HEIGHT_STATISTICS.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/OraToMySQL_TW_OPERATING_DETAIL.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/OraToMySQL_TW_OPERATING_DETAIL_YEAR.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/OraToMySQL_TW_OPERATING_DETAIL_YEAR_1234.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/OraToMySQL_TW_PRODUCT_HEIGHT_STATISTICS.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/OraToMySQL_TW_PROVINCE_OPERATING.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/OraToMySQL_UOS_TACHE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/MTransform_2019-10-31.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/MTransform_2019-11-01.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/TargetDB_Model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/SourceDB_Model.py" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/SourceDB_Model.py" afterDir="false" />
-    </list>
+    <list default="true" id="1c3ace3c-43b2-4b39-937c-6e0060659e39" name="Default" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -88,7 +48,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -278,7 +238,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572596143188</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="postgresql">
+      <created>1595474147413</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1595474147413</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,7 +256,8 @@
     <MESSAGE value="Oracle2MySQL 表对象模型转换 目录结构规划" />
     <MESSAGE value="Oracle2MySQL 表对象模型转换优化" />
     <MESSAGE value="Oracle2MySQL 表对象模型转换优化 + Shell DataX" />
-    <option name="LAST_COMMIT_MESSAGE" value="Oracle2MySQL 表对象模型转换优化 + Shell DataX" />
+    <MESSAGE value="postgresql" />
+    <option name="LAST_COMMIT_MESSAGE" value="postgresql" />
   </component>
   <component name="WindowStateProjectService">
     <state width="1515" height="247" key="GridCell.Tab.0.bottom" timestamp="1595315217856">
@@ -308,10 +276,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1515" height="247" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1595315217856" />
-    <state x="361" y="148" key="Vcs.Push.Dialog.v2" timestamp="1595313003126">
+    <state x="272" y="57" key="SettingsEditor" timestamp="1595474203817">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1595313003126" />
+    <state x="272" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1595474203817" />
+    <state x="361" y="148" key="Vcs.Push.Dialog.v2" timestamp="1595474153111">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1595474153111" />
     <state x="431" y="145" key="search.everywhere.popup" timestamp="1595313461076">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
